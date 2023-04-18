@@ -5,7 +5,6 @@ import ai.djl.repository.zoo.Criteria;
 import ai.djl.Application;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.training.util.ProgressBar;
-import ai.djl.translate.TranslateException;
 import ai.djl.Device;
 import ai.djl.inference.Predictor;
 
@@ -18,8 +17,7 @@ public class SentimentAnalysis {
 
     public SentimentAnalysis() {}
 
-    public Classifications predict(String input) throws TranslateException {
-        // String input = "I like DJL. DJL is the best DL framework!";
+    public Classifications predict(String input) throws Exception {
         logger.info("input Sentence: {}", input);
 
         Criteria<String, Classifications> criteria = Criteria.builder()
